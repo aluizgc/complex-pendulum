@@ -1,48 +1,20 @@
-import pygame, sys, math
-import numpy as np 
-import time 
-from pygame.locals import *
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+import os, sys, cv2
+from scipy.integrate import odeint
 from solucaoedo import dU_dx
-from scipy.integrate import odeint 
+from os.path import isfile, join
 
-pygame.init()
-pygame.font.init()
-font = pygame.font.SysFont('Arial', 15)
-pygame.display.set_caption('Simulação de Pêndulo')
-screen = pygame.display.set_mode((800,600))
-
-# Definição da função slider 
-
-def slider(xmin,xmax,yposi,yposf,button,b):
-    if button[0]!=0:
-        pos = pygame.mouse.get_pos()
-        xc = pos[0]
-        yc = pos[1]
-        if (xc < b-xmin) or (xc >b+xmax):
-            pass
-        if (yc>yposi and yc<yposf):
-            if xc<xmin:
-                xc = xmin   
-            if xc>xmax:
-                xc = xmax
-            return(xc)
-        else:
-            return(b)
-    if button[0] == 0:
-        xc = b   
-        return(xc)
-
+sys.getdefaultencoding()
+#Variáveis 
 t0 = 0
-tf = 1000
+tf = 500
 tp = 0.1
 g = 9.81
 l = 5
 r = 25
 w = 0.5
-cont = 0
-U0 = [math.pi/4,0]
-phi = 0
-isPlaying = False
 
 #Tempo para gráfico e simulação
 tempo =  np.arange(t0,tf,tp)
@@ -51,7 +23,9 @@ ptsSim = len(tempo2)
 i = np.arange(0,ptsSim,1)
 
 #Resolve edo
-
+U0 = [math.pi/4,0]
+ys = odeint(dU_dx, U0, tempo, args=(g,l,r,w))
+phi = ys[:,0]
 #Parametrização
 x1 = r*np.cos(w*tempo)
 y1 = -r*np.sin(w*tempo)
@@ -60,24 +34,64 @@ y2 = -r*np.sin(w*tempo) + l*np.cos(phi)
 x = x1+x2
 y = y1+y2
 
-while True:
-    screen.fill((255,255,255))
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit(0)
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            isPlaying = True
-    
-    pygame.draw.circle(screen, (0,0,0), (230,215), r)
-    if (isPlaying == True):
-        U0 = [math.pi/4,0]
-        ys = odeint(dU_dx, U0, tempo, args=(g,l,r,w))
-        phi = ys[:,0]
-        for cont in range(len(tempo)):
-            pygame.draw.circle(screen, (0,0,0), (int(round(phi[cont])),300), r)
-            #pygame.display.update(pygame.Rect(0,0,800,600))
-            pygame.display.flip()
-            isPlaying = False
-        
-    pygame.display.flip()
+#Plota gráficos
+#print('tempo', tempo)
+#print('tempo2', tempo2)
+'''plt.plot(tempo/10,phi)
+plt.xlabel("Tempo (s)")
+plt.ylabel("\u03A8 (t)")
+#plt.legend()
+plt.show()
+'''
+
+
+for point in i:
+
+    plt.figure()
+    plt.plot(x2[point],y2[point],'bs',markersize=7)
+    plt.plot(x1[point],y1[point],'ro',markersize=7)
+    #plt.plot(0,0,'o--',mfc='none',markersize=4*r)
+    plt.plot([x1[point],x2[point]], [y1[point],y2[point]], 'k-')
+    plt.xlim(-r-50,r+50)
+    plt.ylim(-r-50,r+50)
+    plt.xlabel('eixo-x')
+    plt.ylabel('eixo-y')
+    filenumber = point
+    filenumber=format(filenumber,"05")
+    #filename="image{}.png".format(filenumber)
+    plt.savefig("imagens/image{}.png".format(filenumber))
+    plt.close()
+
+
+def convert_frames_to_video(pathIn,pathOut,fps):
+    frame_array = []
+    files = [f for f in os.listdir(pathIn) if isfile(join(pathIn, f))]
+ 
+    #for sorting the file names properly
+    files.sort(key = lambda x: int(x[5:-4]))
+ 
+    for i in range(len(files)):
+        filename=pathIn + files[i]
+        #reading each files
+        img = cv2.imread(filename)
+        height, width, layers = img.shape
+        size = (width,height)
+        print(filename)
+        #inserting the frames into an image array
+        frame_array.append(img)
+ 
+    out = cv2.VideoWriter(pathOut,cv2.VideoWriter_fourcc(*'DIVX'), fps, size)
+ 
+    for i in range(len(frame_array)):
+        # writing to a image array
+        out.write(frame_array[i])
+    out.release()
+ 
+def main():
+    pathIn= './imagens/'
+    pathOut = 'video.avi'
+    fps = 25.0
+    convert_frames_to_video(pathIn, pathOut, fps)
+ 
+if __name__=="__main__":
+    main()
