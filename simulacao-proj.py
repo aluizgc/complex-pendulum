@@ -32,7 +32,6 @@ def slider(xmin,xmax,yposi,yposf,button,b):
         xc = b   
         return(xc)
 
-
 t0 = 0
 tf = 1000
 tp = 0.1
@@ -41,6 +40,10 @@ l = 5
 r = 25
 w = 0.5
 cont = 0
+U0 = [math.pi/4,0]
+phi = 0
+isPlaying = False
+
 #Tempo para gráfico e simulação
 tempo =  np.arange(t0,tf,tp)
 tempo2 = np.linspace(t0,tf,250)
@@ -48,9 +51,7 @@ ptsSim = len(tempo2)
 i = np.arange(0,ptsSim,1)
 
 #Resolve edo
-U0 = [math.pi/4,0]
-ys = odeint(dU_dx, U0, tempo, args=(g,l,r,w))
-phi = ys[:,0]
+
 #Parametrização
 x1 = r*np.cos(w*tempo)
 y1 = -r*np.sin(w*tempo)
@@ -58,7 +59,7 @@ x2 = r*np.cos(w*tempo) + l*np.sin(phi)
 y2 = -r*np.sin(w*tempo) + l*np.cos(phi)
 x = x1+x2
 y = y1+y2
-isPlaying = False
+
 while True:
     screen.fill((255,255,255))
     for event in pygame.event.get():
@@ -67,12 +68,16 @@ while True:
             sys.exit(0)
         if event.type == pygame.MOUSEBUTTONDOWN:
             isPlaying = True
+    
+    pygame.draw.circle(screen, (0,0,0), (230,215), r)
     if (isPlaying == True):
         U0 = [math.pi/4,0]
         ys = odeint(dU_dx, U0, tempo, args=(g,l,r,w))
         phi = ys[:,0]
-        while cont in range(len(tempo)):
-            print('oi')
+        for cont in range(len(tempo)):
+            pygame.draw.circle(screen, (0,0,0), (int(round(phi[cont])),300), r)
+            #pygame.display.update(pygame.Rect(0,0,800,600))
+            pygame.display.flip()
             isPlaying = False
         
     pygame.display.flip()
