@@ -16,9 +16,9 @@ t0 = 0 # Tempo inicial
 tf = 500 # Tempo final
 tp = 0.1 # Passo de iteração do tempo
 g = 9.81 # Gravidade
-l = 9 # Comprimento da haste
-r = 30 # Raio da espira
-w = 1.1 # Frequência
+l = 5 # Comprimento da haste
+r = 25 # Raio da espira
+w = 0.5 # Frequência
 
 # Definição dos tempoe para gráfico e simulação
 
@@ -45,11 +45,11 @@ y = y1+y2
 # As seguintes linhas de código são responsáveis pela plotagem 
 # de cada imagem com os valores das parametrizações para os 
 # resultados obtidos com a resolução da EDO
-#  
+
 for point in i:
     plt.figure()
     plt.plot(x2[point],y2[point],'bs',label='Massa', markersize=7)
-    plt.plot(x1[point],y1[point],'ro',label='Ponto de suspenção',markersize=7)
+    plt.plot(x1[point],y1[point],'ro',label='Ponto de suspensão',markersize=7)
     plt.plot([x1[point],x2[point]], [y1[point],y2[point]], 'k-')
     plt.legend(loc='upper right', frameon=False)
     plt.xlim(-r-50,r+50)
@@ -84,12 +84,18 @@ def convert_frames_to_video(pathIn,pathOut,fps):
     for i in range(len(frame_array)):
         out.write(frame_array[i])
     out.release()
- 
+
 def main():
     pathIn= './imagens/'
     pathOut = 'video.avi'
     fps = 25.0
     convert_frames_to_video(pathIn, pathOut, fps)
+
+    plt.figure()
+    plt.plot(tempo, phi)
+    plt.xlabel('Tempo')
+    plt.ylabel('\u03D5'+'(t)')
+    plt.show()
  
 if __name__=="__main__":
     main()
