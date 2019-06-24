@@ -16,9 +16,9 @@ t0 = 0 # Tempo inicial
 tf = 500 # Tempo final
 tp = 0.1 # Passo de iteração do tempo
 g = 9.81 # Gravidade
-l = 5 # Comprimento da haste
-r = 25 # Raio da espira
-w = 0.5 # Frequência
+l = 9 # Comprimento da haste
+r = 30 # Raio da espira
+w = 1.1 # Frequência
 
 # Definição dos tempoe para gráfico e simulação
 
@@ -88,7 +88,7 @@ def convert_frames_to_video(pathIn,pathOut,fps):
 def main():
     pathIn= './imagens/'
     pathOut = 'video.avi'
-    fps = 25.0
+    fps = 30.0
     convert_frames_to_video(pathIn, pathOut, fps)
 
     plt.figure()
