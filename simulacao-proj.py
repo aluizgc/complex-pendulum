@@ -20,7 +20,7 @@ l = 9 # Comprimento da haste
 r = 30 # Raio da espira
 w = 1.1 # Frequência
 
-# Definição dos tempos para gráfico e simulação
+# Definição dos tempoe para gráfico e simulação
 
 tempo =  np.arange(t0,tf,tp)
 tempo2 = np.linspace(t0,tf,250)
