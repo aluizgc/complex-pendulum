@@ -1,4 +1,4 @@
-# Este repositório é dedicado à simulação de um pêndulo oscilando com ponto de suspensão em movimento
+# Este repositório é dedicado a simulação de um pêndulo oscilando com ponto de suspensão em movimento.
 ## Na figura abaixo temos um pêndulo simples de massa *m* que tem seu ponto de suporte acoplado em uma espira de raio *R* que gira em torno de seu eixo de simetria com uma frequência *w* fixa.
 
 <p align="center">
