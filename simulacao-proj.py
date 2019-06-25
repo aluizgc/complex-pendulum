@@ -1,5 +1,5 @@
 # Importação das bibliotecas necessárias
-
+from mpl_toolkits.mplot3d import Axes3D
 import math
 import numpy as np
 import matplotlib.pyplot as plt
@@ -46,11 +46,13 @@ y = y1+y2
 # de cada imagem com os valores das parametrizações para os 
 # resultados obtidos com a resolução da EDO
 
+
 files = glob.glob('./imagens/*')
 for f in files: # Exclui os arquivos antes de criar novos
     os.remove(f)
-caminhoMassaX = [x2[0]]
-caminhoMassaY = [y2[0]]
+caminhoMassaX = []
+caminhoMassaY = []
+
 for point in i:
     plt.figure()
     caminhoMassaX.append(x2[point])
@@ -100,10 +102,16 @@ def main():
     convert_frames_to_video(pathIn, pathOut, fps)
 
     plt.figure()
-    plt.plot(tempo, phi)
-    plt.xlabel('Tempo')
-    plt.ylabel('\u03D5'+'(t)')
+    plt.plot(caminhoMassaX[0], caminhoMassaY[0], 'go', label='Início do movimento', markersize = 7)
+    plt.plot(caminhoMassaX[-1], caminhoMassaY[-1], 'rs', label='Término do movimento', markersize = 7)
+    plt.ylim(-30,30)
+    plt.xlim(-30,30)
+    plt.legend(loc='upper right', frameon=True)
+    plt.plot(caminhoMassaX, caminhoMassaY)
+    #plt.xlim(0,500)
+    plt.xlabel('Posição x da massa')
+    plt.ylabel('Posição y da massa')
     plt.show()
- 
+
 if __name__=="__main__":
     main()
