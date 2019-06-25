@@ -7,7 +7,7 @@
   </a>
 </p>
 
-## Na figura seguinte temos um exemplo da simulação obtida.
+## A animação seguinte mostra uma simulação obtida.
 
 <p align="center">
   <a href="https://github.com/aluizgc/proj-classica2">
