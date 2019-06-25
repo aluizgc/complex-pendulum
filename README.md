@@ -21,8 +21,10 @@
 ## Autores
 | [<img src="https://avatars3.githubusercontent.com/u/50808997?s=115"><br><sub>@aluizgc</sub>](https://github.com/aluizgc) |
 | :---: |
-| [<img src="./avatar.jpg?s=115"><br><sub>Gabriel Riberiro Ferreira Lopes</sub>]() |
+
+| [<img src="./avatar.jpg?s=95"><br><sub>Gabriel Riberiro Ferreira Lopes</sub>](https://github.com/aluizgc/proj-classica2) |
 | :---: |
-#### Instituto de Física e Química
-#### Universidade Federal de Itajubá
+
+***Instituto de Física e Química***
+***Universidade Federal de Itajubá***
 
