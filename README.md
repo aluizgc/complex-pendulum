@@ -20,7 +20,7 @@
 
 ## Autores
 
-| [<img src="https://avatars3.githubusercontent.com/u/50808997?s=115"><br><sub>@aluizgc</sub>](https://github.com/aluizgc) | [<img src="./avatar.jpg"><br><sub>Gabriel Riberiro Ferreira Lopes</sub>](https://github.com/aluizgc/proj-classica2) |
+| [<img src="https://avatars3.githubusercontent.com/u/50808997?s=115"><br><sub>@aluizgc</sub>](https://github.com/aluizgc) | [<img src="./avatar2.jpg"><br><sub>Gabriel Riberiro Ferreira Lopes</sub>](https://github.com/aluizgc/proj-classica2) |
 | :---: | :---: |
 
 ****Instituto de Física e Química****
