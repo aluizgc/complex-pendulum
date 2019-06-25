@@ -15,6 +15,13 @@
   </a>
 </p>
 
+## Requerimentos
+
+- [Anaconda Distribution (Python 3.x Version)](https://www.anaconda.com/distribution/)
+
+### Opcional (IDE)
+- [Visual Stuido Code](https://code.visualstudio.com/)
+
 ## Mais detalhes sobre o problema e a resolução do mesmo podem ser encontrados no pdf.
 
 
