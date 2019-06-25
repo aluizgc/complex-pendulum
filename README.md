@@ -19,9 +19,13 @@
 
 
 ## Autores
-| [<img src="https://avatars3.githubusercontent.com/u/50808997?s=115"><br><sub>@aluizgc</sub>](https://github.com/aluizgc) | [<img src="./avatar.jpg?s=50"><br><sub>Gabriel Riberiro Ferreira Lopes</sub>](https://github.com/aluizgc/proj-classica2) |
-| :---: |
 
-***Instituto de Física e Química***
-***Universidade Federal de Itajubá***
+| [<img src="https://avatars3.githubusercontent.com/u/50808997?s=115"><br><sub>@aluizgc</sub>](https://github.com/aluizgc) | [<img src="./avatar.jpg"><br><sub>Gabriel Riberiro Ferreira Lopes</sub>](https://github.com/aluizgc/proj-classica2) |
+| :---: | :---: |
 
+****Instituto de Física e Química****
+
+****Universidade Federal de Itajubá****
+
+| [<img src="https://avatars3.githubusercontent.com/u/183722?s=115&v=4"><br><small>@leocavalcante</small>](https://github.com/leocavalcante) | [<img src="https://avatars0.githubusercontent.com/u/782333?s=115&v=4"><br><sub>@mccraveiro</sub>](https://github.com/mccraveiro) | [<img src="https://avatars1.githubusercontent.com/u/6183702?s=115&v=4"><br><sub>@AcePetrucci</sub>](https://github.com/AcePetrucci) | [<img src="https://avatars2.githubusercontent.com/u/5911989?s=115&v=4"><br><sub>@eduardosilvapereira</sub>](https://github.com/eduardosilvapereira) | [<img src="https://avatars0.githubusercontent.com/u/12174318?s=115&v=4"><br><sub>@brunooomelo</sub>](https://github.com/brunooomelo) | [<img src="https://avatars3.githubusercontent.com/u/8251208?s=115&v=4"><br><sub>@lucianopf</sub>](https://github.com/lucianopf) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
