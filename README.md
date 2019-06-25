@@ -20,9 +20,9 @@
 
 ## Autores
 | [<img src="https://avatars3.githubusercontent.com/u/50808997?s=115"><br><sub>@aluizgc</sub>](https://github.com/aluizgc) |
-
-| [<img src="./avatar.jpg"><br><sub>Gabriel Riberiro Ferreira Lopes</sub>]() |
 | :---: |
-### UNIFEI - Universidade Federal de Itajubá
-### IFQ - Instituto de Física e Química
+| [<img src="./avatar.jpg?s=115"><br><sub>Gabriel Riberiro Ferreira Lopes</sub>]() |
+| :---: |
+#### Instituto de Física e Química
+#### Universidade Federal de Itajubá
 
