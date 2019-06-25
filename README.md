@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/aluizgc/proj-classica2">
-    <img src="./gifsimulacao.gif" width="400">
+    <img src="./gifsimulacao.gif" width="450">
   </a>
 </p>
 
