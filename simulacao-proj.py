@@ -3,7 +3,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-import os, sys, cv2
+import os, sys, cv2, glob
 from scipy.integrate import odeint
 from solucaoedo import dU_dx
 from os.path import isfile, join
@@ -13,17 +13,17 @@ sys.getdefaultencoding()
 # para que resultados variados sejam obtidos
 
 t0 = 0 # Tempo inicial
-tf = 500 # Tempo final
+tf = 1000 # Tempo final
 tp = 0.1 # Passo de iteração do tempo
 g = 9.81 # Gravidade
-l = 9 # Comprimento da haste
-r = 30 # Raio da espira
-w = 1.1 # Frequência
+l = 5 # Comprimento da haste
+r = 15 # Raio da espira
+w = 0.7 # Frequência
 
-# Definição dos tempoe para gráfico e simulação
+# Definição dos tempos para gráfico e simulação
 
 tempo =  np.arange(t0,tf,tp)
-tempo2 = np.linspace(t0,tf,250)
+tempo2 = np.linspace(t0,tf,500)
 ptsSim = len(tempo2)
 i = np.arange(0,ptsSim,1)
 
@@ -36,9 +36,9 @@ phi = ys[:,0]
 # Parametrização do problema
 
 x1 = r*np.cos(w*tempo)
-y1 = -r*np.sin(w*tempo)
+y1 = r*np.sin(w*tempo)
 x2 = r*np.cos(w*tempo) + l*np.sin(phi)
-y2 = -r*np.sin(w*tempo) + l*np.cos(phi)
+y2 = r*np.sin(w*tempo) - l*np.cos(phi)
 x = x1+x2
 y = y1+y2
 
@@ -46,14 +46,22 @@ y = y1+y2
 # de cada imagem com os valores das parametrizações para os 
 # resultados obtidos com a resolução da EDO
 
+files = glob.glob('./imagens/*')
+for f in files: # Exclui os arquivos antes de criar novos
+    os.remove(f)
+caminhoMassaX = [x2[0]]
+caminhoMassaY = [y2[0]]
 for point in i:
     plt.figure()
+    caminhoMassaX.append(x2[point])
+    caminhoMassaY.append(y2[point])
+    plt.plot(caminhoMassaX,caminhoMassaY,'b:', markersize=2)
     plt.plot(x2[point],y2[point],'bs',label='Massa', markersize=7)
     plt.plot(x1[point],y1[point],'ro',label='Ponto de suspensão',markersize=7)
     plt.plot([x1[point],x2[point]], [y1[point],y2[point]], 'k-')
     plt.legend(loc='upper right', frameon=False)
-    plt.xlim(-r-50,r+50)
-    plt.ylim(-r-50,r+50)
+    plt.xlim(-70,70)
+    plt.ylim(-70,70)
     plt.text(-65,60,'Gravidade (g): {}'.format(g))
     plt.text(-65,52,'Comprimento (l): {}'.format(l))
     plt.text(-65,44,'Raio (r): {}'.format(r))
