@@ -45,6 +45,8 @@ y = y1+y2
 # de cada imagem com os valores das parametrizações para os 
 # resultados obtidos com a resolução da EDO
 
+# Apagando todas a imagens dentro da pasta imagens antes de 
+# plotar as novas
 
 files = glob.glob('./imagens/*')
 for f in files: # Exclui os arquivos antes de criar novos
@@ -53,9 +55,9 @@ caminhoMassaX = []
 caminhoMassaY = []
 
 for point in i:
-    plt.figure()
     caminhoMassaX.append(x2[point])
     caminhoMassaY.append(y2[point])
+    plt.figure()
     plt.plot(caminhoMassaX,caminhoMassaY,'b:', markersize=2)
     plt.plot(x2[point],y2[point],'bs',label='Massa', markersize=7)
     plt.plot(x1[point],y1[point],'ro',label='Ponto de suspensão',markersize=7)
@@ -99,15 +101,13 @@ def main():
     pathOut = 'video.avi'
     fps = 30.0
     convert_frames_to_video(pathIn, pathOut, fps)
-
     plt.figure()
     plt.plot(caminhoMassaX[0], caminhoMassaY[0], 'go', label='Início do movimento', markersize = 7)
-    plt.plot(caminhoMassaX[-1], caminhoMassaY[-1], 'rs', label='Término do movimento', markersize = 7)
+    plt.plot(caminhoMassaX[-1], caminhoMassaY[-1], 'rs', label='Fim do movimento', markersize = 7)
     plt.ylim(-30,30)
     plt.xlim(-30,30)
     plt.legend(loc='upper right', frameon=True)
     plt.plot(caminhoMassaX, caminhoMassaY)
-    #plt.xlim(0,500)
     plt.xlabel('Posição x da massa')
     plt.ylabel('Posição y da massa')
     plt.show()
