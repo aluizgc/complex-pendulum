@@ -65,6 +65,8 @@ for point in i:
     plt.legend(loc='upper right', frameon=False)
     plt.xlim(-70,70)
     plt.ylim(-70,70)
+    #plt.text(-65,-40,'Posição X (massa): {}'.format(x2[point])) # Mostrar as posições x da massa no video
+    #plt.text(-65,-46,'Posição Y (massa): {}'.format(y2[point])) # Mostrar as posições x da massa no video
     plt.text(-65,60,'Gravidade (g): {}'.format(g))
     plt.text(-65,52,'Comprimento (l): {}'.format(l))
     plt.text(-65,44,'Raio (r): {}'.format(r))
