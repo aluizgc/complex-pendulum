@@ -53,12 +53,17 @@ for f in files: # Exclui os arquivos antes de criar novos
     os.remove(f)
 caminhoMassaX = []
 caminhoMassaY = []
+#caminhoPontoX = []
+#caminhoPontoY = []
 
 for point in i:
     caminhoMassaX.append(x2[point])
     caminhoMassaY.append(y2[point])
+    #caminhoPontoX.append(x1[point])
+    #caminhoPontoY.append(y1[point])
     plt.figure()
     plt.plot(caminhoMassaX,caminhoMassaY,'b:', markersize=2)
+    #plt.plot(caminhoPontoX,caminhoPontoY,'r:', markersize=2)
     plt.plot(x2[point],y2[point],'bs',label='Massa', markersize=7)
     plt.plot(x1[point],y1[point],'ro',label='Ponto de suspensão',markersize=7)
     plt.plot([x1[point],x2[point]], [y1[point],y2[point]], 'k-')
