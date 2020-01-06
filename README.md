@@ -1,13 +1,12 @@
-# Este repositório é dedicado a simulação de um pêndulo oscilando com ponto de suspensão em movimento.
-## Na figura abaixo temos um pêndulo simples de massa *m* que tem seu ponto de suporte acoplado em uma espira de raio *R* que gira em torno de seu eixo de simetria com uma frequência *w* fixa.
-
+# This repository is dedicated to simulating a swinging pendulum with moving suspension point.
+## In the figure below we have a simple pendulum with mass *m* that has its support point coupled to a radius *R* that rotates around its symmetry axis with a fixed frequency *w*.
 <p align="center">
   <a href="https://github.com/aluizgc/proj-classica2">
     <img src="./probclassica2.jpg" width="400">
   </a>
 </p>
 
-## A animação seguinte mostra uma simulação obtida.
+## The following animation shows the simulation.
 
 <p align="center">
   <a href="https://github.com/aluizgc/proj-classica2">
@@ -15,21 +14,21 @@
   </a>
 </p>
 
-## Requerimentos
+## Requeriments
 
 - [Anaconda Distribution (Python 3.x Version)](https://www.anaconda.com/distribution/)
 
-### IDE (Opcional)
+### IDE (Optional)
 - [Visual Stuido Code](https://code.visualstudio.com/)
 
-## Mais detalhes sobre o problema e a resolução do mesmo podem ser encontrados no pdf.
+## More details about the problem and its resolution can be found in the [PDF](https://github.com/aluizgc/complex-pendulum/blob/master/Pendulo%20oscilando%20com%20ponto%20de%20suspens%C3%A3o%20em%20movimento.pdf) file .
 
 
-## Autores
+## Authors
 
 | [<img src="https://avatars3.githubusercontent.com/u/50808997?s=115"><br><sub>@aluizgc</sub>](https://github.com/aluizgc) | [<img src="./avatargabriel.jpg"><br><sub>Gabriel R. F. Lopes</sub>](https://github.com/aluizgc/proj-classica2) |
 | :---: | :---: |
 
-****Instituto de Física e Química****
+****Institute of Physics and Chemistry****
 
-****Universidade Federal de Itajubá****
+****Federal University of Itajubá****
