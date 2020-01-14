@@ -19,7 +19,7 @@
 - [Anaconda Distribution (Python 3.x Version)](https://www.anaconda.com/distribution/)
 
 ### IDE (Optional)
-- [Visual Stuido Code](https://code.visualstudio.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 
 ## More details about the problem and its resolution can be found in the [PDF](https://github.com/aluizgc/complex-pendulum/blob/master/Pendulo%20oscilando%20com%20ponto%20de%20suspens%C3%A3o%20em%20movimento.pdf) file .
 
